@@ -1,4 +1,8 @@
-function login() {
+localStorage.removeItem("students");
+localStorage.removeItem("exams");
+localStorage.removeItem("rooms");
+localStorage.removeItem("seating");
+function login(){
 
     let username = document.getElementById("username").value;
     let password = document.getElementById("password").value;
@@ -446,3 +450,35 @@ function generateStudents() {
 
     displayStudents();
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
