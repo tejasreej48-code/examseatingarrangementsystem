@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exam Seating Arrangement System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- LOGIN PAGE -->
+    <div class="login-box" id="loginPage">
+
+        <h1>Exam Seating Arrangement</h1>
+
+        <input type="text" id="username" placeholder="Username">
+
+        <input type="password" id="password" placeholder="Password">
+
+        <button onclick="login()">Login</button>
+
+        <p id="loginMessage"></p>
+
+    </div>
+
+
+    <!-- DASHBOARD -->
+    <div class="dashboard" id="dashboardPage">
+
+        <h1>Exam Seating Arrangement System</h1>
+
+        <h2>Admin Dashboard</h2>
+        <div class="stats">
+
+    <div class="stat-card">
+        <h3>Students</h3>
+        <p id="studentCount">0</p>
+    </div>
+
+    <div class="stat-card">
+        <h3>Exams</h3>
+        <p id="examCount">0</p>
+    </div>
+
+    <div class="stat-card">
+        <h3>Rooms</h3>
+        <p id="roomCount">0</p>
+    </div>
+
+</div>
+
+        <div class="buttons">
+
+            <button onclick="showStudentDetails()">
+                Student Details
+            </button>
+
+            <button onclick="showExamDetails()">
+                Exam Details
+            </button>
+
+            <button onclick="showRoomDetails()">
+                Room Details
+            </button>
+
+            <button onclick="showGenerateSeating()">
+                Generate Seating
+            </button>
+
+            <button onclick="showViewSeating()">
+                View Seating
+            </button>
+
+            <button onclick="logout()">
+                Logout
+            </button>
+
+        </div>
+
+        <p id="dashboardMessage"></p>
+
+    </div>
+
+
+    <!-- STUDENT DETAILS PAGE -->
+    <div class="student-page" id="studentPage">
+
+        <h1>Student Details</h1>
+
+        <input type="text" id="studentId" placeholder="Student ID / Roll Number">
+
+        <input type="text" id="studentName" placeholder="Student Name">
+
+        <input type="text" id="branch" placeholder="Branch">
+
+        <input type="text" id="year" placeholder="Year">
+
+        <input type="text" id="section" placeholder="Section">
+
+        <br>
+
+        <button onclick="addStudent()">Save Student</button>
+        <button onclick="generateStudents()">Generate 500 Students</button>
+
+        <button onclick="backToDashboard()">Back to Dashboard</button>
+
+        <p id="studentMessage"></p>
+
+
+        <!-- STUDENT TABLE -->
+        <h2>Student List</h2>
+
+        <table id="studentTable">
+
+            <tr>
+                <th>Student ID</th>
+                <th>Name</th>
+                <th>Branch</th>
+                <th>Year</th>
+                <th>Section</th>
+            </tr>
+
+        </table>
+
+    </div>
+    <div id="examPage" class="student-page">
+
+    <h2>Exam Details</h2>
+
+    <input type="text" id="examId" placeholder="Exam ID">
+
+    <input type="text" id="examSubject" placeholder="Subject">
+
+    <input type="date" id="examDate">
+
+    <input type="time" id="examTime">
+
+    <input type="text" id="examDuration"
+           placeholder="Duration (e.g. 3 Hours)">
+
+    <br>
+
+    <button onclick="addExam()">Save Exam</button>
+
+    <button onclick="backToDashboardFromExam()">
+        Back to Dashboard
+    </button>
+
+    <p id="examMessage"></p>
+
+    <table id="examTable">
+
+        <tr>
+            <th>Exam ID</th>
+            <th>Subject</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Duration</th>
+        </tr>
+
+    </table>
+
+</div>
+<div id="roomPage" class="student-page">
+
+    <h2>Room Details</h2>
+
+    <input type="text" id="roomNumber" placeholder="Room Number">
+
+    <input type="text" id="buildingName" placeholder="Building Name">
+
+    <input type="number" id="roomCapacity" placeholder="Room Capacity">
+
+    <br>
+
+    <button onclick="addRoom()">Save Room</button>
+
+    <button onclick="backToDashboardFromRoom()">
+        Back to Dashboard
+    </button>
+
+    <p id="roomMessage"></p>
+
+    <table id="roomTable">
+        <tr>
+            <th>Room Number</th>
+            <th>Building</th>
+            <th>Capacity</th>
+        </tr>
+    </table>
+
+</div>
+<div id="generatePage" class="student-page">
+
+    <h2>Generate Seating Arrangement</h2>
+
+    <p>Click the button below to automatically arrange students.</p>
+
+    <button onclick="generateSeating()">
+        Generate Seating
+    </button>
+
+    <button onclick="backToDashboardFromGenerate()">
+        Back to Dashboard
+    </button>
+
+    <p id="generateMessage"></p>
+
+</div>
+<div id="viewPage" class="student-page">
+
+    <h2>View Seating Arrangement</h2>
+
+    <table id="seatingTable">
+        <tr>
+            <th>Student ID</th>
+            <th>Student Name</th>
+            <th>Room Number</th>
+            <th>Seat Number</th>
+        </tr>
+    </table>
+
+    <p id="viewMessage"></p>
+
+    <button onclick="backToDashboardFromView()">
+        Back to Dashboard
+    </button>
+
+</div>
+
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
